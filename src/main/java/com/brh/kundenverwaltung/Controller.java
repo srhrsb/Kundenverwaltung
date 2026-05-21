@@ -39,8 +39,22 @@ public class Controller {
     @FXML
     private TextField postcodeChangeTf;
 
+    private CustomerDAO dao;
+
+    @FXML
+    private void initialize(){
+        dao = new TempDAO();
+        dao.addCustomer("","","","", "", null,"");
+    }
+
     @FXML
     private void onClickAddData(ActionEvent event) {
+
+
+
+
+
+
     }
 
     @FXML
