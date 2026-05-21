@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -84,16 +85,48 @@ public class Controller {
     @FXML
     private void onClickSearch(ActionEvent event) {
         LOGGER.log(Level.INFO, "Search clicked");
-        if(!validateTextFields(idChangeTf)){
-            LOGGER.log(Level.SEVERE, "Kunde konnte nicht gesucht werden, " +
-                    "ungültige id eingegeben");
 
+        if (!validateTextFields(idChangeTf)) {
+            LOGGER.log(Level.WARNING, "Kunde konnte nicht gesucht werden, " +
+                    "ungültige id eingegeben");
+            //ToDo: Fehler an Nutzerausgaben
             return;
         }
+
+        Optional<Customer> customerOptional = dao.getCustomerById(idChangeTf.getText());
+
+        if (customerOptional.isEmpty()) {
+            LOGGER.log(Level.WARNING, "Ungültiges Kundenobjekt, Optional ist leer");
+            //ToDo: Infomeldung als Dialog
+            return;
+        }
+
+//        customerOptional.ifPresent( customer -> {
+//            nameChangeTf.setText(customer.getName());
+//            firstnameChangeTf.setText(customer.getFirstname());
+//            streetChangeTf.setText(customer.getStreet());
+//            numberChangeTf.setText(customer.getNumber());
+//            placeChangeTf.setText(customer.getPlace());
+//            postcodeChangeTf.setText(customer.getPostcode());
+//            LOGGER.log(Level.INFO, "Kundendaten eingetragen");
+//
+//        });
+
+            Customer customer = customerOptional.get();
+            nameChangeTf.setText(customer.getName());
+            firstnameChangeTf.setText(customer.getFirstname());
+            streetChangeTf.setText(customer.getStreet());
+            numberChangeTf.setText(customer.getNumber());
+            placeChangeTf.setText(customer.getPlace());
+            postcodeChangeTf.setText(customer.getPostcode());
+            LOGGER.log(Level.INFO, "Kundendaten eingetragen");
+
+
 
 
 
     }
+
     @FXML
     private void onClickChangeData(ActionEvent event) {
         LOGGER.log(Level.INFO, "Change Data clicked");
