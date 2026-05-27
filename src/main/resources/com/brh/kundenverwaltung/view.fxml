@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -132,7 +134,7 @@
                                     <TextField fx:id="postcodeChangeTf" prefHeight="25.0" prefWidth="263.0" />
                                  </children>
                               </HBox>
-                              <Button  fx:id="changeButton" mnemonicParsing="false" onAction="#onClickChangeData" prefHeight="25.0" prefWidth="360.0" text="Ändern" />
+                              <Button fx:id="changeButton" mnemonicParsing="false" onAction="#onClickChangeData" prefHeight="25.0" prefWidth="360.0" text="Ändern" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -143,7 +145,20 @@
           </Tab>
             <Tab text="Übersicht">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="customerTable" layoutX="14.0" layoutY="14.0" prefHeight="543.0" prefWidth="1056.0">
+                          <columns>
+                            <TableColumn fx:id="colId" prefWidth="86.39999103546143" text="ID" />
+                            <TableColumn fx:id="colName" prefWidth="87.20001220703125" text="Name" />
+                              <TableColumn fx:id="colFirstname" prefWidth="174.40000915527344" text="Vorname" />
+                              <TableColumn fx:id="colStreet" prefWidth="222.39996337890625" text="Straße" />
+                              <TableColumn fx:id="colNumber" prefWidth="87.2000732421875" text="Hausnummer" />
+                              <TableColumn fx:id="colPlace" prefWidth="234.4000244140625" text="Ort" />
+                              <TableColumn fx:id="colPostcode" prefWidth="168.00006103515625" text="PLZ" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
                </content>
             </Tab>
         </tabs>

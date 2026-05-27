@@ -6,6 +6,7 @@ module com.brh.kundenverwaltung {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires java.logging;
+    requires javafx.base;
 
     opens com.brh.kundenverwaltung to javafx.fxml;
     exports com.brh.kundenverwaltung;

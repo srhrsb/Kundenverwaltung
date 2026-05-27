@@ -1,4 +1,6 @@
-Mai 27, 2026 2:53:29 PM com.brh.kundenverwaltung.Controller onClickSearch
+Mai 27, 2026 3:15:07 PM com.brh.kundenverwaltung.Controller onClickSearch
 INFORMATION: Search clicked
-Mai 27, 2026 2:53:29 PM com.brh.kundenverwaltung.Controller onClickSearch
-INFORMATION: Kundendaten eingetragen
+Mai 27, 2026 3:15:07 PM com.brh.kundenverwaltung.Controller validateTextFields
+WARNUNG: Texteingabe ungültig Textfeld:TextField[id=idChangeTf, styleClass=text-input text-field]
+Mai 27, 2026 3:15:07 PM com.brh.kundenverwaltung.Controller onClickSearch
+WARNUNG: Kunde konnte nicht gesucht werden, ungültige id eingegeben

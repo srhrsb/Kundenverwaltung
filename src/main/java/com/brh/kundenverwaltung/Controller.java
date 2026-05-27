@@ -1,17 +1,42 @@
 package com.brh.kundenverwaltung;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Controller {
+
+    //Tabelle Kunde------------------------------------------
+    @FXML
+    private TableColumn<Customer, String> colId;
+    @FXML
+    private TableColumn<Customer, String> colName;
+    @FXML
+    private TableColumn<Customer, String> colFirstname;
+    @FXML
+    private TableColumn<Customer, String> colStreet;
+    @FXML
+    private TableColumn<Customer, String> colNumber;
+    @FXML
+    private TableColumn<Customer, String> colPlace;
+    @FXML
+    private TableColumn<Customer, String> colPostcode;
+    @FXML
+    private TableView<Customer> customerTable;
+
+
+
+
+
+
 
     //add data tab-----------------------------
     @FXML
@@ -51,6 +76,7 @@ public class Controller {
     private static final Logger LOGGER = Logger.
             getLogger(Controller.class.getName());
 
+
     @FXML
     private void initialize(){
         dao = new TempDAO();
@@ -64,6 +90,25 @@ public class Controller {
                                  postcodeChangeTf,
                                  changeButton
                           );
+
+       setTableViewCells();
+       Optional<ArrayList<Customer>> optionalCustomer = dao.getAllCustomers();
+
+       if(optionalCustomer.isPresent()){
+          var customerList = optionalCustomer.get();
+          customerTable.getItems().addAll(customerList);
+       }
+
+    }
+
+    private void setTableViewCells(){
+        colId.setCellValueFactory( new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory( new PropertyValueFactory<>("name"));
+        colFirstname.setCellValueFactory( new PropertyValueFactory<>("firstname"));
+        colStreet.setCellValueFactory( new PropertyValueFactory<>("street"));
+        colNumber.setCellValueFactory( new PropertyValueFactory<>("number"));
+        colPlace.setCellValueFactory( new PropertyValueFactory<>("place"));
+        colPostcode.setCellValueFactory( new PropertyValueFactory<>("postcode"));
     }
 
     @FXML
@@ -89,10 +134,10 @@ public class Controller {
         );
 
         if(success){
-            //ToDo: Feedback in Info Dialog
+           DialogUtils.showInfoDialog("Neuer Kunde hinzugefügt: "+nameTf.getText());
         }
         else{
-            //ToDo: Feedback in Error Dialog
+            DialogUtils.showErrorDialog("Kunde konnte nicht hinzugefügt werden");
         }
     }
 
