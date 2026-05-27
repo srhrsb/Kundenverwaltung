@@ -2,10 +2,14 @@ package com.brh.kundenverwaltung;
 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TempDAO implements CustomerDAO{
 
     private ArrayList<Customer> customerList;
+    private static final Logger LOGGER = Logger.
+            getLogger(TempDAO.class.getName());
 
     public TempDAO(){
         customerList = new ArrayList<>();
@@ -142,7 +146,7 @@ public class TempDAO implements CustomerDAO{
     private boolean checkArguments(String... values ){
         for( String value : values) {
             if( value == null || value.isBlank())
-                System.err.println("Illegal Argument ");
+                LOGGER.log(Level.WARNING,("Illegal Argument "));
                 return false;
         }
 

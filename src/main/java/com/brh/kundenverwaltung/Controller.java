@@ -50,6 +50,7 @@ public class Controller {
     @FXML
     private void initialize(){
         dao = new TempDAO();
+        LOGGER.addHandler(App.getLogFileHandler());
     }
 
     @FXML
