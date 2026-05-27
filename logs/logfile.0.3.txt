@@ -1,0 +1,4 @@
+Mai 27, 2026 2:53:29 PM com.brh.kundenverwaltung.Controller onClickSearch
+INFORMATION: Search clicked
+Mai 27, 2026 2:53:29 PM com.brh.kundenverwaltung.Controller onClickSearch
+INFORMATION: Kundendaten eingetragen

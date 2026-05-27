@@ -1,0 +1,6 @@
+Mai 27, 2026 10:38:56 AM com.brh.kundenverwaltung.Controller onClickAddData
+INFORMATION: Add Data clicked
+Mai 27, 2026 10:39:25 AM com.brh.kundenverwaltung.Controller onClickSearch
+INFORMATION: Search clicked
+Mai 27, 2026 10:39:25 AM com.brh.kundenverwaltung.Controller onClickSearch
+WARNUNG: Ungültiges Kundenobjekt, Optional ist leer

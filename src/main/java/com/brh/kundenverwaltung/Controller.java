@@ -2,6 +2,8 @@ package com.brh.kundenverwaltung;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -42,6 +44,8 @@ public class Controller {
     private TextField placeChangeTf;
     @FXML
     private TextField postcodeChangeTf;
+    @FXML
+    private Button changeButton;
 
     private CustomerDAO dao;
     private static final Logger LOGGER = Logger.
@@ -51,6 +55,15 @@ public class Controller {
     private void initialize(){
         dao = new TempDAO();
         LOGGER.addHandler(App.getLogFileHandler());
+
+        setControlsActive(false, nameChangeTf,
+                                 firstnameChangeTf,
+                                 streetChangeTf,
+                                 numberChangeTf,
+                                 placeChangeTf,
+                                 postcodeChangeTf,
+                                 changeButton
+                          );
     }
 
     @FXML
@@ -113,6 +126,15 @@ public class Controller {
 //
 //        });
 
+        setControlsActive(true, nameChangeTf,
+                firstnameChangeTf,
+                streetChangeTf,
+                numberChangeTf,
+                placeChangeTf,
+                postcodeChangeTf,
+                changeButton
+        );
+
             Customer customer = customerOptional.get();
             nameChangeTf.setText(customer.getName());
             firstnameChangeTf.setText(customer.getFirstname());
@@ -168,5 +190,10 @@ public class Controller {
             }
         }
         return isValid;
+    }
+
+    private void setControlsActive(boolean active, Control... elements){
+        for( Control e : elements)
+            e.setDisable(!active);
     }
 }

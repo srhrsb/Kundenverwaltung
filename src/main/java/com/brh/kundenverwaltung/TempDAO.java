@@ -145,9 +145,10 @@ public class TempDAO implements CustomerDAO{
      */
     private boolean checkArguments(String... values ){
         for( String value : values) {
-            if( value == null || value.isBlank())
-                LOGGER.log(Level.WARNING,("Illegal Argument "));
+            if( value == null || value.isBlank()) {
+                LOGGER.log(Level.WARNING, ("Illegal Argument "));
                 return false;
+            }
         }
 
         return true;

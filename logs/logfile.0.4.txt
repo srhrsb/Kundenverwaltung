@@ -1,0 +1,20 @@
+Mai 27, 2026 10:49:56 AM com.brh.kundenverwaltung.Controller onClickSearch
+INFORMATION: Search clicked
+Mai 27, 2026 10:49:56 AM com.brh.kundenverwaltung.Controller onClickSearch
+INFORMATION: Kundendaten eingetragen
+Mai 27, 2026 10:50:31 AM com.brh.kundenverwaltung.Controller onClickAddData
+INFORMATION: Add Data clicked
+Mai 27, 2026 10:50:31 AM com.brh.kundenverwaltung.Controller validateTextFields
+WARNUNG: Texteingabe ungültig Textfeld:TextField[id=idTf, styleClass=text-input text-field]
+Mai 27, 2026 10:50:31 AM com.brh.kundenverwaltung.Controller onClickAddData
+SCHWERWIEGEND: Kunde konnte nicht hinzugefügt werden, ungültige Eingabedaten
+Mai 27, 2026 10:51:02 AM com.brh.kundenverwaltung.Controller onClickAddData
+INFORMATION: Add Data clicked
+Mai 27, 2026 10:51:35 AM com.brh.kundenverwaltung.Controller onClickSearch
+INFORMATION: Search clicked
+Mai 27, 2026 10:51:35 AM com.brh.kundenverwaltung.Controller onClickSearch
+WARNUNG: Ungültiges Kundenobjekt, Optional ist leer
+Mai 27, 2026 10:51:37 AM com.brh.kundenverwaltung.Controller onClickSearch
+INFORMATION: Search clicked
+Mai 27, 2026 10:51:37 AM com.brh.kundenverwaltung.Controller onClickSearch
+WARNUNG: Ungültiges Kundenobjekt, Optional ist leer
