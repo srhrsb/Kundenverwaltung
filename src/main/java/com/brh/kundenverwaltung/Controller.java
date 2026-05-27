@@ -32,12 +32,6 @@ public class Controller {
     @FXML
     private TableView<Customer> customerTable;
 
-
-
-
-
-
-
     //add data tab-----------------------------
     @FXML
     private TextField idTf;
@@ -130,6 +124,7 @@ public class Controller {
         );
 
         if(success){
+           addAndRefreshTable();
            DialogUtils.showInfoDialog("Neuer Kunde hinzugefügt: "+nameTf.getText());
         }
         else{
@@ -184,11 +179,6 @@ public class Controller {
             placeChangeTf.setText(customer.getPlace());
             postcodeChangeTf.setText(customer.getPostcode());
             LOGGER.log(Level.INFO, "Kundendaten eingetragen");
-
-
-
-
-
     }
 
     @FXML
@@ -214,6 +204,7 @@ public class Controller {
         );
 
         if(success){
+            addAndRefreshTable();
             //ToDo: Feedback in Info Dialog
         }
         else{
@@ -241,10 +232,17 @@ public class Controller {
     private void addAndRefreshTable(){
         Optional<ArrayList<Customer>> optionalCustomer = dao.getAllCustomers();
         if(optionalCustomer.isPresent()){
-            customerTable.getItems().clear();
             var customerList = optionalCustomer.get();
-            customerTable.getItems().addAll(customerList);
+            customerTable.getItems().setAll(customerList);
             customerTable.refresh();
         }
+    }
+
+    @FXML
+    private void onItemSelected(){
+        int line = customerTable.getSelectionModel().getSelectedIndex();
+        LOGGER.log(Level.INFO, "Zeile geklickt: " + line);
+
+        //ToDo: Daten direkt in Change Tab eintragen
     }
 }

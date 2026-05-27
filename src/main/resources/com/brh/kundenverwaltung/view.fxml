@@ -147,7 +147,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="customerTable" layoutX="14.0" layoutY="14.0" prefHeight="543.0" prefWidth="1056.0">
+                        <TableView fx:id="customerTable" layoutX="14.0" layoutY="14.0" onMouseClicked="#onItemSelected" prefHeight="543.0" prefWidth="1056.0">
                           <columns>
                             <TableColumn fx:id="colId" prefWidth="86.39999103546143" text="ID" />
                             <TableColumn fx:id="colName" prefWidth="87.20001220703125" text="Name" />
