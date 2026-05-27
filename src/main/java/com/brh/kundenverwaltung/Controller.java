@@ -92,7 +92,7 @@ public class Controller {
                           );
 
        setTableViewCells();
-
+       addAndRefreshTable();
 
 
     }
