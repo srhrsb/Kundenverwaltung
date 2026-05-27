@@ -92,12 +92,8 @@ public class Controller {
                           );
 
        setTableViewCells();
-       Optional<ArrayList<Customer>> optionalCustomer = dao.getAllCustomers();
 
-       if(optionalCustomer.isPresent()){
-          var customerList = optionalCustomer.get();
-          customerTable.getItems().addAll(customerList);
-       }
+
 
     }
 
@@ -240,5 +236,15 @@ public class Controller {
     private void setControlsActive(boolean active, Control... elements){
         for( Control e : elements)
             e.setDisable(!active);
+    }
+
+    private void addAndRefreshTable(){
+        Optional<ArrayList<Customer>> optionalCustomer = dao.getAllCustomers();
+        if(optionalCustomer.isPresent()){
+            customerTable.getItems().clear();
+            var customerList = optionalCustomer.get();
+            customerTable.getItems().addAll(customerList);
+            customerTable.refresh();
+        }
     }
 }
