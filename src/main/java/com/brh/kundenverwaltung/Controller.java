@@ -243,6 +243,7 @@ public class Controller {
         int line = customerTable.getSelectionModel().getSelectedIndex();
         LOGGER.log(Level.INFO, "Zeile geklickt: " + line);
 
+
         //ToDo: Daten direkt in Change Tab eintragen
     }
 }
