@@ -1,0 +1,20 @@
+Mai 28, 2026 1:36:41 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 1
+Mai 28, 2026 1:36:48 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 0
+Mai 28, 2026 1:56:16 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 1
+Mai 28, 2026 1:56:19 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 0
+Mai 28, 2026 1:56:20 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 1
+Mai 28, 2026 1:56:20 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 0
+Mai 28, 2026 1:56:21 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 1
+Mai 28, 2026 1:56:33 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 0
+Mai 28, 2026 1:56:51 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 1
+Mai 28, 2026 1:56:55 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 0

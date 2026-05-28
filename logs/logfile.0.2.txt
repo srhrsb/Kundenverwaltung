@@ -1,6 +1,2 @@
-Mai 27, 2026 5:05:54 PM com.brh.kundenverwaltung.Controller onClickSearch
-INFORMATION: Search clicked
-Mai 27, 2026 5:05:55 PM com.brh.kundenverwaltung.Controller onClickSearch
-INFORMATION: Kundendaten eingetragen
-Mai 27, 2026 5:06:06 PM com.brh.kundenverwaltung.Controller onClickChangeData
-INFORMATION: Change Data clicked
+Mai 28, 2026 2:01:15 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: -1

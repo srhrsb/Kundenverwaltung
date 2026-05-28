@@ -245,5 +245,39 @@ public class Controller {
 
 
         //ToDo: Daten direkt in Change Tab eintragen
+        Optional<ArrayList<Customer>> optionalCustomer = dao.getAllCustomers();
+        if(optionalCustomer.isPresent()) {
+
+            var customerList = optionalCustomer.get();
+            Customer customer = customerList.get(line);
+            idChangeTf.setText(customer.getId());
+            nameChangeTf.setText(customer.getName());
+            firstnameChangeTf.setText(customer.getFirstname());
+            streetChangeTf.setText(customer.getStreet());
+            numberChangeTf.setText(customer.getNumber());
+            placeChangeTf.setText(customer.getPlace());
+            postcodeChangeTf.setText(customer.getPostcode());
+
+            setControlsActive(true, nameChangeTf,
+                    firstnameChangeTf,
+                    streetChangeTf,
+                    numberChangeTf,
+                    placeChangeTf,
+                    postcodeChangeTf,
+                    changeButton
+            );
+
+            setControlsActive(false, idChangeTf);
+
+        }
+    }
+
+    @FXML
+    private void onClickDeleteAll(ActionEvent event) {
+        if(DialogUtils.showConfirmDialog("Wirklich löschen?")) {
+            dao.deleteAllCustomers();
+            addAndRefreshTable();
+            LOGGER.log(Level.INFO,"Alle Kundendaten gelöscht");
+        }
     }
 }

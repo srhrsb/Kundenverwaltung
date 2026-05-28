@@ -1,0 +1,2 @@
+Mai 28, 2026 1:34:10 PM com.brh.kundenverwaltung.Controller onItemSelected
+INFORMATION: Zeile geklickt: 1
